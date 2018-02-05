@@ -11,43 +11,44 @@ Red [
 	}
 	History: [
 		0.1.0 "25-01-2018"	"Start of work."
+		0.1.1 "05-02-2018"	"Code cleaning"
 	]
 ]
 
 ; Window & values definition
 alert: func [AlertType message][
-	Alyut: layout [title "Alert" size 350x75 backdrop white at 10x13 Alimg: image 50x50 at 75x15 Almsg: text 300x50 white black bold at 282x45 Albtn: button "OK" [unview Alyut return 0]]
+	Aly: layout [title "Alert" size 350x75 backdrop white at 10x13 AlIco: image 50x50 at 75x15 AlMsg: text 300x50 white black bold at 282x45 AlBtn: button "OK" [unview Aly return 0]]
 	switch/default AlertType [
-			1 [ Alyut/text: "Info"
-				Alimg/image: Alimg1
-				Almsg/text: message
+			1 [ Aly/text: "Info"
+				AlIco/image: AlImg1
+				AlMsg/text: message
 		]
-			2 [ Alyut/text: "Caution"
-				Alimg/image: Alimg2
-				Almsg/text: message
+			2 [ Aly/text: "Caution"
+				AlIco/image: AlImg2
+				AlMsg/text: message
 		] 
-			3 [ Alyut/text: "Stop"
-				Alimg/image: Alimg3
-				Almsg/text: message
+			3 [ Aly/text: "Stop"
+				AlIco/image: AlImg3
+				AlMsg/text: message
 		] 
-			4 [ Alyut/text: "Working"
-				Alimg/image: Alimg4
-				Almsg/text: message
+			4 [ Aly/text: "Working"
+				AlIco/image: AlImg4
+				AlMsg/text: message
 		] 		
-			5 [ Alyut/text: "Error"
-				Alimg/image: Alimg5
-				Almsg/text: message
+			5 [ Aly/text: "Error"
+				AlIco/image: AlImg5
+				AlMsg/text: message
 		] 
 	][
-		Alyut/text: "Error"
-		Alimg/image: Alimg5
-		Almsg/text: "UNDEFINED ALERT ON SOURCE CODE"
+		Aly/text: "Error"
+		AlIco/image: AlImg5
+		AlMsg/text: "UNDEFINED ALERT ON SOURCE CODE"
 	]
-	view Alyut
+	view Aly
 ]
 
-; Icons static definition
-Alimg1: make image! [60x50 #{
+; Icons static definition... sorry but we want to run stand-alone!
+AlImg1: make image! [60x50 #{
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     FFFFFFFFFFFFFFFFFFFFFFFFED1C24ED1C24ED1C24ED1C24ED1C24ED1C24
@@ -350,7 +351,7 @@ Alimg1: make image! [60x50 #{
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     }]
 
-Alimg2: make image! [60x50 #{
+AlImg2: make image! [60x50 #{
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
@@ -653,7 +654,7 @@ Alimg2: make image! [60x50 #{
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     }]
 	
-Alimg3: make image! [58x52 #{
+AlImg3: make image! [58x52 #{
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
@@ -958,7 +959,7 @@ Alimg3: make image! [58x52 #{
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     }]
 	
-Alimg4: make image! [57x51 #{
+AlImg4: make image! [57x51 #{
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
@@ -1252,7 +1253,7 @@ Alimg4: make image! [57x51 #{
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     }]
 	
-Alimg5: make image! [58x52 #{
+AlImg5: make image! [58x52 #{
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
